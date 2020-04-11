@@ -17,6 +17,10 @@ Discarded input sections
                 0x00000000       0x18 build/default/production/IODrivers.o
  .text.isPressedC
                 0x00000000       0x18 build/default/production/IODrivers.o
+ .text.pinAas   0x00000000       0x42 build/default/production/IODrivers.o
+ .text.pinBas   0x00000000       0x42 build/default/production/IODrivers.o
+ .text.pinCas   0x00000000       0x42 build/default/production/IODrivers.o
+ .text.pinDas   0x00000000       0x42 build/default/production/IODrivers.o
  .text.setPINB  0x00000000       0x16 build/default/production/IODrivers.o
  .text.setPINC  0x00000000       0x16 build/default/production/IODrivers.o
  .text.setPIND  0x00000000       0x16 build/default/production/IODrivers.o
@@ -327,21 +331,21 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0xa0
+.debug_aranges  0x00000000       0xc0
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x20 build/default/production/main.o
  .debug_aranges
-                0x00000020       0x80 build/default/production/IODrivers.o
+                0x00000020       0xa0 build/default/production/IODrivers.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0xd21
+.debug_info     0x00000000      0xe09
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/ATmega_DFP/2.1.87/gcc/dev/atmega32/avr5/memx-const/crtatmega32.o
  .debug_info    0x000004e6      0x3a2 build/default/production/main.o
- .debug_info    0x00000888      0x499 build/default/production/IODrivers.o
+ .debug_info    0x00000888      0x581 build/default/production/IODrivers.o
 
 .debug_abbrev   0x00000000      0x5f0
  *(.debug_abbrev)
@@ -349,16 +353,16 @@ END GROUP
  .debug_abbrev  0x000004a3       0x95 build/default/production/main.o
  .debug_abbrev  0x00000538       0xb8 build/default/production/IODrivers.o
 
-.debug_line     0x00000000      0x464
+.debug_line     0x00000000      0x508
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x119 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/ATmega_DFP/2.1.87/gcc/dev/atmega32/avr5/memx-const/crtatmega32.o
  .debug_line    0x00000119       0xf6 build/default/production/main.o
- .debug_line    0x0000020f      0x255 build/default/production/IODrivers.o
+ .debug_line    0x0000020f      0x2f9 build/default/production/IODrivers.o
 
-.debug_frame    0x00000000      0x108
+.debug_frame    0x00000000      0x148
  *(.debug_frame)
  .debug_frame   0x00000000       0x24 build/default/production/main.o
- .debug_frame   0x00000024       0xe4 build/default/production/IODrivers.o
+ .debug_frame   0x00000024      0x124 build/default/production/IODrivers.o
 
 .debug_str      0x00000000      0x1c6
  *(.debug_str)
@@ -366,9 +370,9 @@ END GROUP
  .debug_str     0x00000196       0x29 build/default/production/main.o
  .debug_str     0x000001bf        0x7 build/default/production/IODrivers.o
 
-.debug_loc      0x00000000      0x2dc
+.debug_loc      0x00000000      0x4fc
  *(.debug_loc)
- .debug_loc     0x00000000      0x2dc build/default/production/IODrivers.o
+ .debug_loc     0x00000000      0x4fc build/default/production/IODrivers.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -388,10 +392,10 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000       0x80
+.debug_ranges   0x00000000       0xa0
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x10 build/default/production/main.o
- .debug_ranges  0x00000010       0x70 build/default/production/IODrivers.o
+ .debug_ranges  0x00000010       0x90 build/default/production/IODrivers.o
 
 .debug_macro
  *(.debug_macro)
