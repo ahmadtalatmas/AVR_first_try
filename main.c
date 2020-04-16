@@ -9,12 +9,14 @@
 #include <avr/io.h>
 #include "IODrivers.h"
 #include "BoardConfig.h"
-
-
+#include "lcd.h"
 #define portA           1
 #define portB           2
 #define portC           3
 #define portD           4
+int flag1 = 0;
+int flag2 = 0;
+int flag3 = 0;
 
 int main(void) {
 
@@ -26,25 +28,58 @@ int main(void) {
     DDRB = 0x00; // INPUT PIN.
     DDRD = 0x00;
     DDRD |= (1 << LED2);
+    
+    LCD_Init();
+    char a[] = "LED 1 is ON";
+    char b[] = "LED 2 is ON";
+    char c[] = "LED 3 is ON";
+    char d[] = "LED 1 is OFF";
+    char e[] = "LED 2 is OFF";
+    char f[] = "LED 3 is OFF";
 
     while (1) {
         // Loop until power OFF
-        if (isPressedB(button0))
-            setPIN(LED0, portC);
-        else
-            resetPIN(LED0, portC);
-        if (isPressedB(button1)) {
-            setPIN(LED1, portC);
-            setPINA(buzzer);
-
-        } else {
-            resetPIN(LED1, portC);
-            resetPINA(buzzer);
+        if (isPressedB(button0)) {
+            _delay_ms(100);
+            if (isPressedB(button0)) {
+                togglePINC(LED0);
+                LCD_Clear();
+                flag1 += 1;
+                if (flag1 == 1)
+                    LCD_String(a);
+                else {
+                    flag1 = 0;
+                    LCD_String(d);
+                }
+            }
         }
-        if (isPressedD(button2))
-            setPIN(LED2, portD);
-        else
-            resetPIN(LED2, portD);
-
+        if (isPressedB(button1)) {
+            _delay_ms(100);
+            if (isPressedB(button1)) {
+                togglePINC(LED1);
+                LCD_Clear();
+                flag2 += 1;
+                if (flag2 == 1)
+                    LCD_String(b);
+                else {
+                    flag2 = 0;
+                    LCD_String(e);
+                }
+            }
+        }
+        if (isPressedD(button2)) {
+            _delay_ms(100);
+            if (isPressedD(button2)) {
+                togglePIND(LED2);
+                LCD_Clear();
+                flag3 += 1;
+                if (flag3 == 1)
+                    LCD_String(c);
+                else {
+                    flag3 = 0;
+                    LCD_String(f);
+                }
+            }
+        }
     }
 }
